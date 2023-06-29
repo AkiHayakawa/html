@@ -8,22 +8,22 @@ $text-color: #e3d61d;
 .content {
   background-color: $background-color;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 3fr minmax(200px, 1fr);
   grid-template-rows: auto;
 }
 .content-list {
   color: $text-color;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column: 1/4;
+  // grid-column: 1/4;
   gap: 20px;
 }
 .content-list-item {
   border-radius: 4px;
   border: solid 2px aqua;
   background-color: $block-color;
-  min-height: 200px;
-  min-width: 300px;
+  min-height: 70px;
+  min-width: 50px;
 }
 %toultap {
   display: flex;
@@ -66,4 +66,62 @@ article[role="main"] {
 aside[role="complementary"] {
   float: right;
   width: 300px / 960px * 100%;
+}
+.item-5 {
+  position: absolute;
+  top: 100px;
+  overflow: inherit;
+}
+.content-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // transition: all 5s ease-in 0s;
+}
+
+.content-list-item:hover {
+  // top: 40px;
+  // left: 40px;
+  animation: 2s ease-in 0s item-square infinite;
+}
+@keyframes item-square {
+  0% {
+    top: 0;
+    right: 0;
+  }
+  25% {
+    top: 50px;
+    right: 0;
+  }
+  50% {
+    top: 50px;
+    right: 50px;
+  }
+  75% {
+    top: 0px;
+    right: 50px;
+  }
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+.side_bar {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 700px) {
+  .content-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .content {
+    grid-template-columns: 3fr minmax(160px, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  .content-list {
+    grid-template-columns: 1fr;
+  }
 }

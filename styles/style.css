@@ -44,7 +44,7 @@
   animation-name: slidein;
   /* animation-iteration-count: infinite; */
   animation-direction: alternate;
-  animation: slidein 3s alternate;
+  height: 50px;
 }
 /* @keyframes duration | timing-function | delay |
    iteration-count | direction | fill-mode | play-state | name */
@@ -59,7 +59,6 @@
   0% {
     margin-left: 100%;
     padding-bottom: 200px;
-    width: 300%;
     color: rgb(10, 9, 9);
   }
 
@@ -67,27 +66,21 @@
     margin-left: 75%;
     padding-bottom: 150px;
     color: rgb(88, 11, 11);
-    width: 250%;
   }
   50% {
     margin-left: 50%;
     padding-bottom: 100px;
     color: rgb(247, 36, 36);
-
-    width: 200%;
   }
   75% {
     margin-left: 25%;
     padding-bottom: 75px;
     color: rgb(244, 87, 87);
-    width: 150%;
   }
   100% {
     margin-left: 0%;
     padding-bottom: 50px;
     color: rgb(245, 153, 153);
-
-    width: 100%;
   }
 }
 /* transition */

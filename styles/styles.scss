@@ -2,11 +2,27 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 $background-color: rgb(54, 54, 54);
-$block-color: #0d2f4d;
-$text-color: #e3d61d;
+$block-color: #1070c3;
+$text-color: #47c43e;
+:root {
+  --background: linear-gradient(#f498ad 25%, #2e9aff 25% 50%, #ffd829 75%);
+  --background-image-rigth-bottom: linear-gradient(
+    to right bottom,
+    #47c43e,
+    #1070c3
+  );
+}
 body {
   font: 100% $font-stack;
   color: $primary-color;
+  height: 2000px;
+  background: repeating-linear-gradient(
+    -45deg,
+    black 0,
+    black 25px,
+    orange 25px,
+    orange 50px
+  );
 }
 .navbar {
   background-color: $background-color;

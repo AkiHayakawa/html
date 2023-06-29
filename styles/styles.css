@@ -1,7 +1,7 @@
 .content {
   background-color: rgb(54, 54, 54);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 3fr minmax(200px, 1fr);
   grid-template-rows: auto;
 }
 
@@ -9,7 +9,6 @@
   color: #e3d61d;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column: 1/4;
   gap: 20px;
 }
 
@@ -17,8 +16,8 @@
   border-radius: 4px;
   border: solid 2px aqua;
   background-color: #0d2f4d;
-  min-height: 200px;
-  min-width: 300px;
+  min-height: 70px;
+  min-width: 50px;
 }
 
 .warning, .error, .success, .message {
@@ -53,32 +52,101 @@ aside[role=complementary] {
   width: 31.25%;
 }
 
+.item-5 {
+  position: absolute;
+  top: 100px;
+  overflow: inherit;
+}
+
+.content-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-list-item:hover {
+  animation: 2s ease-in 0s item-square infinite;
+}
+
+@keyframes item-square {
+  0% {
+    top: 0;
+    right: 0;
+  }
+  25% {
+    top: 50px;
+    right: 0;
+  }
+  50% {
+    top: 50px;
+    right: 50px;
+  }
+  75% {
+    top: 0px;
+    right: 50px;
+  }
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
+.side_bar {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 700px) {
+  .content-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .content {
+    grid-template-columns: 3fr minmax(160px, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  .content-list {
+    grid-template-columns: 1fr;
+  }
+}
+:root {
+  --background: linear-gradient(#f498ad 25%, #2e9aff 25% 50%, #ffd829 75%);
+  --background-image-rigth-bottom: linear-gradient(
+    to right bottom,
+    #47c43e,
+    #1070c3
+  );
+}
+
 body {
   font: 100% Helvetica, sans-serif;
   color: #333;
+  height: 2000px;
+  background: repeating-linear-gradient(-45deg, black 0, black 25px, orange 25px, orange 50px);
 }
 
 .navbar {
   background-color: rgb(54, 54, 54);
-  color: #e3d61d;
+  color: #47c43e;
 }
 
 .navbar h3 {
-  color: #e3d61d;
+  color: #47c43e;
   border-radius: 4px;
   border: solid 2px black;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: 2s ease-in 0s infinite alternate navbar-item;
-  background-color: #0d2f4d;
+  background-color: #1070c3;
 }
 @keyframes navbar-item {
   from {
     background-color: rgb(54, 54, 54);
   }
   to {
-    background-color: #0d2f4d;
+    background-color: #1070c3;
   }
 }
 
